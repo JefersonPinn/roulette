@@ -30,13 +30,14 @@ img{
 
 
 .nome{
+    text-align: center;
+    border: none;
     position: absolute;
-    width: 100%;
+    width: calc(100%);
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: large;
     color: black;
-    background-image: linear-gradient(to bottom, #F7D917 0%,#EEAD2D  100%);
     bottom: 0;
 }
 
@@ -71,9 +72,10 @@ img{
     color: black;
     width: 120px;
     height: 50px;
-	background-color: yellow;
+	background-image: linear-gradient(to bottom, #F7D917 0%,#EEAD2D  100%);
 	z-index: -1;
 	transition: all 0.4s ease;
+    font-size: larger;
 }
 
 .fill-one:hover{
@@ -86,7 +88,6 @@ body{
 }
 
 .filho{
-border-bottom-style: solid;
     border-top-left-radius: 10px;
     border-top-right-radius: 05px;
     margin-bottom: 40px;

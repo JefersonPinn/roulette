@@ -8,18 +8,26 @@
 img{
     width: 300px;
     height: 300px;
-    border-bottom-style: solid;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 05px;
 }
 
 .Movie{
-    border: none;
+    box-shadow: rgba(198, 240, 46, 0.4) -5px 5px, rgba(240, 227, 46, 0.3) -10px 10px, rgba(240, 227, 46, 0.2) -15px 15px, rgba(237, 240, 46, 0.1) -20px 20px, rgba(240, 227, 46, 0.05) -25px 25px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border-color: #F7D917;
+    border-style: solid;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    /*border: none;*/
     width: 300px;
     margin: 40px;
     text-align: center;
-    background-image: linear-gradient(to top, #612e2e 0%,#803838  100%);
+    background-image: linear-gradient(to top, #F7D917 0%,#EEAD2D  100%);
 }
+
+.Movie:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
 
 .nome{
     position: absolute;
@@ -27,13 +35,19 @@ img{
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: large;
-    color: white;
-    background-image: linear-gradient(to top, #803838 0%, #612e2e 100%);
+    color: black;
+    background-image: linear-gradient(to bottom, #F7D917 0%,#EEAD2D  100%);
     bottom: 0;
 }
 
 .overview{
-    color: white;
+    font-size: larger;
+    text-align: justify;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 0;
+    color: black;
 }
 
 #genres{
@@ -50,6 +64,9 @@ img{
 }
 
 .fill-one {
+    border-radius: 10px;
+    box-shadow: rgba(198, 240, 46, 0.4) -2px 2px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     border: none;
     color: black;
     width: 120px;
@@ -59,13 +76,23 @@ img{
 	transition: all 0.4s ease;
 }
 
+.fill-one:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
 body{
-    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    background-image: linear-gradient(to right, #000000 0%, #232726 100%);
 
 }
 
 .filho{
+border-bottom-style: solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 05px;
     margin-bottom: 40px;
+    height: 100%;
+    position: relative;
+}
     height: 100%;
     position: relative;
 }

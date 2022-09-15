@@ -5,6 +5,7 @@
   }
 
 select {
+    box-shadow: rgba(198, 240, 46, 0.4) -2px 2px;
     /* Reset Select */
     appearance: none;
     outline: 0;

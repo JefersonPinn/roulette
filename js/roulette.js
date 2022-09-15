@@ -1,10 +1,15 @@
 const KEY = '05f0a4fb193a3e163e172a013348e621';
 const language = 'pt-BR';
-const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=23&with_genres=53&with_watch_monetization_types=flatrate`;
+const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=23&with_genres=53&with_watch_monetization_types=flatrate`;
 const Filme = document.getElementById('filme');
 
+function gerarNum(a, b) {
+    return Math.floor(Math.random() * (b-a + 1)) + a;
+}
+
+
 function roletar(idGenre){
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${idGenre}&with_watch_monetization_types=flatrate`
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=1&with_genres=${idGenre}&with_watch_monetization_types=flatrate`
         ).then(response => {
             return response.json();
         }).then(jsonParsed =>{
@@ -14,17 +19,24 @@ function roletar(idGenre){
                 
                 getMovie();
                 function getMovie() {
-                    const Movie = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageNumber}&with_genres=${idGenre}&with_watch_monetization_types=flatrate`;
+                    const Movie = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=${pageNumber}&with_genres=${idGenre}&with_watch_monetization_types=flatrate`;
                     fetch(Movie
                         ).then(response => {
                             return response.json();
                         }).then(jsonres =>{
+                            const movieNum = jsonres.results[gerarNum(0, 20)]
                             console.log(jsonres);
-                            jsonres.results.forEach(movie =>{
+                            const nomeFilme = movieNum.original_title;
+                            const posterFilme = movieNum.poster_path;
+                            const overviewFilme = movieNum.overview;
+                            createDivMovie(nomeFilme, Filme, posterFilme, overviewFilme);
+                            /*jsonres.results.forEach(movie =>{
                                 const nomeFilme = movie.original_title;
                                 const posterFilme = movie.poster_path;
                                 const overviewFilme = movie.overview;
-                                createDivMovie(nomeFilme, Filme, posterFilme, overviewFilme);})
+                                createDivMovie(nomeFilme, Filme, posterFilme, overviewFilme);
+                                console.log(movie);
+                            })*/
                         } )
                 }
         } )

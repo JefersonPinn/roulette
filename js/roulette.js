@@ -15,11 +15,11 @@ function roletar(idGenre){
         }).then(jsonParsed =>{
                 const pages = jsonParsed.total_pages;
                 const results = jsonParsed.total_results;
-                const pageNumber = Math.floor(Math.random() * 20 + 1)
+                const pageNumber = Math.floor(Math.random() * 10 + 1)
                 
                 getMovie();
                 function getMovie() {
-                    const Movie = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&region=BR&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=1&with_genres=${idGenre}&with_watch_monetization_types=flatrate`;
+                    const Movie = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&region=BR&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=${gerarNum(0, 19)}&with_genres=${idGenre}&with_watch_monetization_types=flatrate`;
                     fetch(Movie
                         ).then(response => {
                             return response.json();

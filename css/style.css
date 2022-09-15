@@ -1,0 +1,71 @@
+#mae{
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    position: relative;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    border-bottom-style: solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 05px;
+}
+
+.Movie{
+    border: none;
+    width: 300px;
+    margin: 40px;
+    text-align: center;
+    background-image: linear-gradient(to top, #612e2e 0%,#803838  100%);
+}
+
+.nome{
+    position: absolute;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: large;
+    color: white;
+    background-image: linear-gradient(to top, #803838 0%, #612e2e 100%);
+    bottom: 0;
+}
+
+.overview{
+    color: white;
+}
+
+#genres{
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+#roletar{
+    top: 50%;
+    position: absolute;
+    height: 100%;
+}
+
+.fill-one {
+    border: none;
+    color: black;
+    width: 120px;
+    height: 50px;
+	background-color: yellow;
+	z-index: -1;
+	transition: all 0.4s ease;
+}
+
+body{
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+
+}
+
+.filho{
+    margin-bottom: 40px;
+    height: 100%;
+    position: relative;
+}

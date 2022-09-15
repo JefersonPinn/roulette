@@ -1,6 +1,6 @@
 const KEY = '05f0a4fb193a3e163e172a013348e621';
 const language = 'pt-BR';
-const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=23&with_genres=53&with_watch_monetization_types=flatrate`;
+const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&region=BR&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=23&with_genres=53&with_watch_monetization_types=flatrate`;
 const Filme = document.getElementById('filme');
 
 function gerarNum(a, b) {
@@ -9,22 +9,22 @@ function gerarNum(a, b) {
 
 
 function roletar(idGenre){
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=1&with_genres=${idGenre}&with_watch_monetization_types=flatrate`
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&region=BR&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=1&with_genres=${idGenre}&with_watch_monetization_types=flatrate`
         ).then(response => {
             return response.json();
         }).then(jsonParsed =>{
                 const pages = jsonParsed.total_pages;
                 const results = jsonParsed.total_results;
-                const pageNumber = Math.floor(Math.random() * 500 + 1)
+                const pageNumber = Math.floor(Math.random() * 20 + 1)
                 
                 getMovie();
                 function getMovie() {
-                    const Movie = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=${pageNumber}&with_genres=${idGenre}&with_watch_monetization_types=flatrate`;
+                    const Movie = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=${language}&region=BR&sort_by=primary_release_date.desc&include_adult=false&include_video=false&page=1&with_genres=${idGenre}&with_watch_monetization_types=flatrate`;
                     fetch(Movie
                         ).then(response => {
                             return response.json();
                         }).then(jsonres =>{
-                            const movieNum = jsonres.results[gerarNum(0, 20)]
+                            const movieNum = jsonres.results[gerarNum(0, 19)]
                             console.log(jsonres);
                             const nomeFilme = movieNum.original_title;
                             const posterFilme = movieNum.poster_path;
@@ -37,6 +37,7 @@ function roletar(idGenre){
                                 createDivMovie(nomeFilme, Filme, posterFilme, overviewFilme);
                                 console.log(movie);
                             })*/
+                            console.log(gerarNum(0, 19));
                         } )
                 }
         } )

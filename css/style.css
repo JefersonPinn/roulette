@@ -1,7 +1,7 @@
 #mae{
+    height: 120px;
     display: flex;
     justify-content: center;
-    height: 80px;
     position: relative;
 }
 
@@ -58,9 +58,15 @@ img{
 }
 
 #roletar{
-    top: 75%;
+    top: 50%;
     position: absolute;
     height: 100%;
+}
+
+#trending{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15px;
 }
 
 .fill-one {
@@ -92,4 +98,18 @@ body{
     margin-bottom: 40px;
     height: 100%;
     position: relative;
+}
+
+a{
+    color: #000000;
+    text-decoration-line: none;
+}
+
+@font-face {
+    font-family: Pt Sans;
+    src: url(/css/PTSans-Bold.ttf);
+}
+
+*{
+    font-family: Pt Sans;
 }

@@ -56,9 +56,15 @@
 }
 
 #roletar{
+<<<<<<< HEAD
     padding: 10px 50px;
     align-items: center;
     position: flex;
+=======
+    top: 56%;
+    position: absolute;
+    height: 100%;
+>>>>>>> de18de33b014a2d4be3bb30760e1965219aadcbd
 }
 
 

@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Roulette</title>
-    <script type="text/javascript" src="js/roulette.js" defer></script>
-    <script type="text/javascript" src="js/genres.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+    <title>Movie Roulette - Trending</title>
+    <script type="text/javascript" src="js/treding.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="css/styleT.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="css/select.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="css/header.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="css/button.css" media="screen"/>
@@ -23,13 +22,8 @@
         <a href="#"><button>Contato</button></a>  
     </header>
     <div id="mae">
-        <div id="genres">
-            <select name="generoselect" class="select" id="genero">
-                <option>Selecione um Genero</option>
-            </select>
-        </div>
         <div id="roletar" class="container container-one">
-            <button class="bn39" onclick="roletar(document.querySelector('#genero').value)"><span class="bn39span">Roletar</span></button>
+                <button class="bn39" onclick="getMovie()"><span class="bn39span">Roletar</span></button>
         </div>
     </div>
 </div>
